@@ -1,0 +1,11 @@
+{
+  "name": "licet-dev",
+  "version": "1.0.0",
+  "description": "LICET Onlie Portal",
+  "main": "build.js",
+  "scripts": {
+    "deploy": ""
+  },
+  "author": "Mahadeer Mohamed",
+  "license": "ISC"
+}
