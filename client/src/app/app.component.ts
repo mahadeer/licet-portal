@@ -7,6 +7,5 @@ import { UserService } from "./services/user.service";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = "LOYOLA-ICAM COLLEGE OF ENGINEERING AND TECHNOLOGY Online Portal";
   constructor(private user: UserService) {}
 }

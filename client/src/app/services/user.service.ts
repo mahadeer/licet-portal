@@ -30,7 +30,7 @@ export class UserService {
 
   logout() {
     this.api
-      .logoutUser(this.user.userName)
+      .logoutUser(this.user.username)
       .subscribe(isLoggedIn => (this._isLoggedIn = isLoggedIn));
   }
 }
