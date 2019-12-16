@@ -2,6 +2,12 @@
     <div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
         <div class="center-title">
             <h3 [textContent]="title"></h3>
+            <div *ngIf="response.message != ''" class="uk-align-center uk-container-small">
+                <div [ngClass]="{'uk-alert-primary': response.status, 'uk-alert-danger': !response.status}" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p [innerHtml]="response.message"></p>
+                </div>
+            </div>
         </div>
         <div class="uk-width-medium uk-padding-small">
             <div class="toggle-class">
@@ -22,46 +28,37 @@
                     </div>
                     <div class="uk-margin-bottom">
                         <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1"
-                            (click)="login()">LOG
-                            IN</button>
+                            (click)="login()">LOG IN</button>
                     </div>
                 </fieldset>
             </div>
-            <form class="toggle-class" hidden>
-                <div class="uk-margin-small">
-                    <div class="uk-inline uk-width-1-1">
-                        <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: profile"></span>
-                        <input class="uk-input uk-border-pill" required placeholder="Full name" type="text">
-                    </div>
-                </div>
+            <div class="toggle-class" hidden>
                 <div class="uk-margin-small">
                     <div class="uk-inline uk-width-1-1">
                         <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
-                        <input class="uk-input uk-border-pill" required placeholder="Username" type="text">
+                        <input class="uk-input uk-border-pill" required placeholder="Username" type="text"
+                            [(ngModel)]="newUser.username" />
                     </div>
                 </div>
                 <div class="uk-margin-small">
                     <div class="uk-inline uk-width-1-1">
                         <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: lock"></span>
-                        <input class="uk-input uk-border-pill" required placeholder="Password" type="password">
-                    </div>
-                </div>
-                <div class="uk-margin-small">
-                    <div class="uk-inline uk-width-1-1">
-                        <input class="uk-input uk-border-pill" required placeholder="Confirm Password" type="password">
+                        <input class="uk-input uk-border-pill" required placeholder="Password" type="password"
+                            [(ngModel)]="newUser.password" />
                     </div>
                 </div>
                 <div class="uk-margin-small">
                     <div class="uk-inline uk-width-1-1">
                         <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: mail"></span>
-                        <input class="uk-input uk-border-pill" placeholder="E-mail" required type="text">
+                        <input class="uk-input uk-border-pill" placeholder="E-mail" required type="text"
+                            [(ngModel)]="newUser.email" />
                     </div>
                 </div>
                 <div class="uk-margin-bottom">
-                    <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">Sign
-                        up</button>
+                    <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1"
+                        (click)="signup()">Sign up</button>
                 </div>
-            </form>
+            </div>
             <div>
                 <div class="uk-text-center">
                     <a class="uk-link-reset uk-text-small toggle-class"
