@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { ApiService } from "./api.service";
 import User from "../models/User";
 import { IServiceResponse } from "../models/ApiResponse";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root"
@@ -18,7 +19,7 @@ export class UserService {
     return this._user;
   }
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private router: Router) {
     this._isLoggedIn = false;
   }
 
@@ -38,10 +39,18 @@ export class UserService {
       this.api.authenticateUser<User>(username, password).subscribe(res => {
         this._isLoggedIn = res.status;
         this._user = res.data;
-        resolve({
-          status: res.status,
-          message: `${res.code}: ${res.message}`
-        });
+        if (res.status) {
+          if (res.data.admin) {
+            this.router.navigate(["/dashboard"]);
+          } else {
+            this.router.navigate(["/home"]);
+          }
+        } else {
+          resolve({
+            status: res.status,
+            message: `${res.code}: ${res.message}`
+          });
+        }
       });
     });
   }

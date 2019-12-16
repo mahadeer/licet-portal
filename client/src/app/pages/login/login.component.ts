@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "../services/user.service";
-import { ILoginInfo } from "../models/Login";
-import User from "../models/User";
-import { IServiceResponse } from "../models/ApiResponse";
+import { UserService } from "../../services/user.service";
+import { ILoginInfo } from "../../models/Login";
+import User from "../../models/User";
+import { IServiceResponse } from "../../models/ApiResponse";
 
 @Component({
   selector: "app-login",
