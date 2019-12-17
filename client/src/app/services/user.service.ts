@@ -21,6 +21,11 @@ export class UserService {
 
   constructor(private api: ApiService, private router: Router) {
     this._isLoggedIn = false;
+    /* Mock Code */
+    this._user = new User();
+    this._user.admin = false;
+    this._user.username = "mahadeer";
+    /* Mock Code */
   }
 
   signup(user: User): Promise<IServiceResponse> {

@@ -8,6 +8,7 @@ import { AdmissionComponent } from "./pages/user/admission/admission.component";
 import { PaymentComponent } from "./pages/user/payment/payment.component";
 import { FormslistComponent } from "./pages/formslist/formslist.component";
 import { FormviewerComponent } from "./pages/formviewer/formviewer.component";
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   /* Auth Pages */
@@ -20,8 +21,9 @@ const routes: Routes = [
   { path: "create", component: AdmissionComponent },
   { path: "payment", component: PaymentComponent },
   /* Common Pages */
-  { path: "formslist", component: FormslistComponent },
+  { path: "home", component: FormslistComponent },
   { path: "viewer", component: FormviewerComponent },
+  { path: "profile", component: ProfileComponent },
   { path: "404", component: NotfoundComponent },
   { path: "**", redirectTo: "/404" }
 ];
@@ -30,4 +32,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  /* JWT and Angular Route Guard Implementation pending */
+}

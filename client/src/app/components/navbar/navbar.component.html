@@ -1,1 +1,61 @@
-<p>navbar works!</p>
+<header style="border-bottom: 1px solid rgb(242, 242, 242);"
+    data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top" class="uk-sticky">
+    <div class="uk-container">
+        <nav id="navbar" data-uk-navbar="mode: click;" class="uk-navbar">
+            <div class="uk-navbar-left uk-visible@m">
+                <ul class="uk-navbar-nav">
+                    <li [className]="router.url == '/home' ? 'uk-active': ''"><a href="/home">Home</a></li>
+                    <li *ngIf="isAdmin" [className]="router.url == '/dashboard' ? 'uk-active': ''"><a
+                            href="/dashboard">Dashboard</a>
+                    </li>
+                    <li *ngIf="isAdmin" [className]="router.url == '/transactions' ? 'uk-active': ''"><a
+                            href="/transactions">Transactions</a></li>
+                </ul>
+            </div>
+            <div class="uk-navbar-left uk-hidden@m">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="#" data-uk-icon="icon:more" class="uk-icon" aria-expanded="false"></a>
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 0px; top: 60px;">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li [className]="router.url == '/home' ? 'uk-active': ''"><a href="/home">Home</a></li>
+                                <li *ngIf="isAdmin" [className]="router.url == '/dashboard' ? 'uk-active': ''"><a
+                                        href="/dashboard">Dashboard</a></li>
+                                <li *ngIf="isAdmin" [className]="router.url == '/transactions' ? 'uk-active': ''"><a
+                                        href="/transactions">Transactions</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="uk-navbar-center">
+                <a class="uk-navbar-item uk-logo" href="/home">LICET</a>
+            </div>
+            <div class="uk-navbar-right">
+                <div *ngIf="!isAdmin" class="uk-navbar-item">
+                    <form action="javascript:void(0)">
+                        <a href="/create" class="uk-visible@m uk-button uk-button-small uk-button-primary">Create</a>
+                        <a href="/create" data-uk-icon="icon:plus"
+                            class="uk-hidden@m uk-icon uk-icon-button uk-button-primary" aria-expanded="false"></a>
+                    </form>
+                </div>
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="#" data-uk-icon="icon:user" class="uk-icon" aria-expanded="false"></a>
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-left" style="left: 0px; top: 60px;">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-nav-header uk-text-small uk-text-primary">YOUR ACCOUNT</li>
+                                <li><a href="/profile"><span data-uk-icon="icon: pencil" class="uk-icon"></span>
+                                        Edit</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li><a href="/logout"><span data-uk-icon="icon: sign-out" class="uk-icon"></span>
+                                        Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

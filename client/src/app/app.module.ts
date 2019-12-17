@@ -14,6 +14,7 @@ import { AdmissionComponent } from './pages/user/admission/admission.component';
 import { PaymentComponent } from './pages/user/payment/payment.component';
 import { FormslistComponent } from './pages/formslist/formslist.component';
 import { FormviewerComponent } from './pages/formviewer/formviewer.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormviewerComponent } from './pages/formviewer/formviewer.component';
     AdmissionComponent,
     PaymentComponent,
     FormslistComponent,
-    FormviewerComponent
+    FormviewerComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
