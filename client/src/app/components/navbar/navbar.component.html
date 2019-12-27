@@ -32,7 +32,7 @@
                 <a class="uk-navbar-item uk-logo" href="/home">LICET</a>
             </div>
             <div class="uk-navbar-right">
-                <div *ngIf="!isAdmin" class="uk-navbar-item">
+                <div *ngIf="!isAdmin && router.url != '/create'" class="uk-navbar-item">
                     <form action="javascript:void(0)">
                         <a href="/create" class="uk-visible@m uk-button uk-button-small uk-button-primary">Create</a>
                         <a href="/create" data-uk-icon="icon:plus"

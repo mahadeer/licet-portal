@@ -1,0 +1,34 @@
+@import "node_modules/progress-tracker/src/styles/progress-tracker.scss";
+
+.custom-theme {
+  .is-complete {
+    .progress-marker::before {
+      background-color: #178738;
+    }
+    .progress-marker::after {
+      background-color: #47cd62;
+    }
+  }
+
+  .progress-step.is-disabled:hover {
+    .progress-marker::before {
+      pointer-events: none;
+      background-color: #b6b6b6;
+    }
+  }
+}
+
+.error-summary {
+  .uk-card {
+    border: 1px dashed red;
+  }
+
+  .error-list {
+    li {
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+    }
+  }
+}
